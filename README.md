@@ -1,4 +1,5 @@
 # 🏥 Healthcare Performance Analytics Dashboard
+## [Live Dashboard Demo](https://YOUR-USERNAME.github.io/healthcare-performance-analytics-dashboard/)
 
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue?logo=postgresql)
 ![Excel](https://img.shields.io/badge/Excel-Data%20Model-green?logo=microsoft-excel)
