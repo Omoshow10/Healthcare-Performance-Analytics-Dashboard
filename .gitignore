@@ -1,0 +1,41 @@
+# Environment
+.env
+*.env
+
+# Database credentials
+pg_credentials.txt
+connection_strings.txt
+
+# Large data files (download from CMS directly — see docs/Data_Sources.md)
+data/cms_hospital_general.csv
+data/readmissions.csv
+data/hcahps.csv
+data/quality_metrics.csv
+
+# Power BI published cache
+*.pbix.lock
+
+# Excel temp files
+~$*.xlsx
+~$*.xlsm
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Python (if used for ETL)
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# Logs
+*.log
+logs/
