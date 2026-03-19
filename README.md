@@ -1,4 +1,4 @@
-## [Live Dashboard Demo](https://Omoshow10.github.io/healthcare-performance-analytics-dashboard/)
+## [Live Dashboard Demo](https://omoshow10.github.io/healthcare-performance-analytics-dashboard/)
 
 # 🏥 Healthcare Performance Analytics Dashboard
 
