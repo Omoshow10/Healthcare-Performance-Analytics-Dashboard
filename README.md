@@ -2,7 +2,8 @@
 
 # 🏥 Healthcare Performance Analytics Dashboard
 
-![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue?logo=postgresql)
+
+![SQL](https://img.shields.io/badge/SQL-MS%20SQL%20Server-blue?logo=microsoftsqlserver)
 ![Excel](https://img.shields.io/badge/Excel-Data%20Model-green?logo=microsoft-excel)
 ![PowerBI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
@@ -18,81 +19,12 @@ The system:
 
 ---
 
-## 📊 Analytical Outputs
-
-### Output 1 — Departmental Performance Summary
-
-| Department | Avg LOS | 30-Day Readmission Rate | Bed Occupancy |
-|---|---|---|---|
-| Emergency Department | 4.2 hrs | 8.3% | 87% |
-| Medical / Surgical | 3.8 days | **11.2%** ⚠ | 79% |
-| Intensive Care Unit (ICU) | 5.1 days | 6.7% | **91%** ⚠ |
-| Outpatient Services | 2.1 hrs | 3.1% | 74% |
-| Pediatrics | 2.9 days | 5.4% | 68% |
-
-> ⚠ Medical/Surgical exceeds CMS national benchmark (9.8%) by +1.4pp. ICU bed occupancy at 91% indicates near-capacity operations — an actionable insight for resource planning.
-
----
-
-### Output 2 — 30-Day Readmission Analysis
-
-| Metric | Value / Finding |
-|---|---|
-| Total Discharges Analyzed | 28,400 |
-| 30-Day Readmissions Identified | 4,489 |
-| Overall Readmission Rate | 15.8% (↑ +0.3pp vs prior year) |
-| Highest Risk Diagnosis Category | Heart Failure — 21.2% readmission rate |
-| Departments Above CMS Threshold (9.8%) | Medical/Surgical at 11.2% (+1.4pp above benchmark) |
-| Estimated Annual Excess Bed-Days | 20,650 bed-days (4,489 readmissions × 4.6 day avg LOS) |
-| Estimated Annual Cost Impact | ~$22.4M (20,650 days × $1,086 AHRQ avg daily cost) |
-
----
-
-### Output 3 — Key Performance Insights
-
-Analysis of the dataset identified that **Medical/Surgical units recorded the highest 30-day readmission rate at 11.2%**, exceeding the CMS national benchmark of 9.8% by 1.4 percentage points, indicating a priority area for discharge planning improvement and post-acute care coordination. Heart Failure emerged as the highest-risk diagnosis category at 21.2%, followed by COPD at 20.1% — both substantially above their respective CMS condition-specific benchmarks and representing the primary drivers of preventable readmission cost, estimated at approximately $22.4 million annually across 20,650 excess bed-days.
-
-**ICU bed occupancy consistently exceeded 90% during weekday shifts** (Monday–Wednesday peak), signalling a critical capacity management opportunity. The pattern of near-capacity ICU operations combined with a 94% staffing utilisation rate suggests a structural supply-demand imbalance that, if unaddressed, carries meaningful risk of care quality degradation and staff burnout. A proactive bed management protocol, including earlier discharge planning and inter-departmental transfer coordination, is indicated.
-
-**Outpatient Services demonstrated the strongest overall performance** with a 3.1% readmission rate — 6.7 percentage points below the CMS benchmark — and a 74% bed occupancy rate within the optimal range, alongside a 76% staffing utilisation rate. These operational metrics suggest that the scheduling, patient triage, and discharge coordination practices employed in Outpatient Services represent a transferable best-practice model that, if systematically applied to the Medical/Surgical and ICU units, could yield measurable improvement in readmission rates and resource utilisation across the broader facility.
-
----
-
-## 📸 Dashboard Visualizations
-
-### Executive Healthcare Operations Overview
-![Executive Healthcare Operations Overview](outputs/Executive_Healthcare_Operations_Overview.png)
-
----
-
-### 30-Day Readmission Rate Analysis
-![30-Day Readmission Rate Analysis](outputs/30_Day_Readmission_Rate_Analysis.png)
-
----
-
-### Resource Utilization and Capacity Dashboard
-![Resource Utilization and Capacity Dashboard](outputs/Resource_Utilization_and_Capacity_Dashboard.png)
-
----
-
-### Patient Flow and Length of Stay Analysis
-![Patient Flow and Length of Stay Analysis](outputs/Patient_Flow_and_Length_of_Stay_Analysis.png)
-
----
-
 ## 🗂️ Repository Structure
 
 ```
 healthcare-analytics/
 │
 ├── README.md                        ← Project overview (you are here)
-├── index.html                       ← Live interactive dashboard (GitHub Pages)
-│
-├── outputs/
-│   ├── Executive_Healthcare_Operations_Overview.png
-│   ├── 30_Day_Readmission_Rate_Analysis.png
-│   ├── Resource_Utilization_and_Capacity_Dashboard.png
-│   └── Patient_Flow_and_Length_of_Stay_Analysis.png
 │
 ├── sql/
 │   ├── 01_schema_setup.sql          ← Database schema & table definitions
@@ -103,11 +35,11 @@ healthcare-analytics/
 │   └── 06_views_and_aggregates.sql  ← Reusable views for Power BI
 │
 ├── excel/
-│   └── Excel_Setup_Guide.md         ← Excel data model instructions
+│   ├── Healthcare_Data_Model.xlsx   ← Cleaned dataset with pivot tables
+│   └── Data_Dictionary.xlsx         ← Field definitions & source mapping
 │
 ├── powerbi/
-│   ├── Dashboard_Build_Guide.md     ← Power BI build guide
-│   └── healthcare_dashboard_mockup.html
+│   └── Healthcare_Dashboard.pbix    ← Power BI report file
 │
 ├── data/
 │   ├── sample_cms_hospital.csv      ← Sample CMS hospital data (anonymized)
@@ -149,7 +81,7 @@ healthcare-analytics/
 
 | Tool | Version | Purpose |
 |---|---|---|
-| **SQL** (PostgreSQL) | 14+ | Data storage, cleaning, transformation |
+| **SQL** (Microsoft SQL Server) | 14+ | Data storage, cleaning, transformation |
 | **Microsoft Excel** | 2019+ | Data modeling, pivot analysis, staging |
 | **Power BI Desktop** | Latest | Interactive dashboard & visualizations |
 
@@ -158,27 +90,30 @@ healthcare-analytics/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- PostgreSQL 14+ installed locally or cloud instance (Azure, AWS RDS)
+- Microsoft SQL Server 2019+ installed locally or cloud instance (Azure, AWS RDS)
 - Microsoft Excel 2019 or Microsoft 365
 - Power BI Desktop (free download from Microsoft)
 
 ### Step 1 — Set Up the Database
 ```sql
 -- Run scripts in order
-psql -U your_user -d your_db -f sql/01_schema_setup.sql
-psql -U your_user -d your_db -f sql/02_data_cleaning.sql
-psql -U your_user -d your_db -f sql/03_hospital_performance.sql
-psql -U your_user -d your_db -f sql/04_operational_efficiency.sql
-psql -U your_user -d your_db -f sql/05_outcome_analytics.sql
-psql -U your_user -d your_db -f sql/06_views_and_aggregates.sql
+sqlcmd -S your_server -d your_db -i sql_schema_setup.sql
+sqlcmd -S your_server -d your_db -i sql_data_cleaning.sql
+sqlcmd -S your_server -d your_db -i sql_hospital_performance.sql
+sqlcmd -S your_server -d your_db -i sql_operational_efficiency.sql
+sqlcmd -S your_server -d your_db -i sql_outcome_analytics.sql
+sqlcmd -S your_server -d your_db -i sql_views_and_aggregates.sql
 ```
 
 ### Step 2 — Load Sample Data
 ```sql
 -- Load CSV data into staging tables
-\COPY staging.cms_hospital FROM 'data/sample_cms_hospital.csv' CSV HEADER;
-\COPY staging.readmissions FROM 'data/sample_readmissions.csv' CSV HEADER;
-\COPY staging.quality_metrics FROM 'data/sample_quality_metrics.csv' CSV HEADER;
+BULK INSERT staging.cms_hospital FROM 'C:\your_path\data\sample_cms_hospital.csv'
+WITH (FORMAT = 'CSV', FIRSTROW = 2, FIELDTERMINATOR = ',', TABLOCK);
+BULK INSERT staging.readmissions FROM 'C:\your_path\data\sample_readmissions.csv'
+WITH (FORMAT = 'CSV', FIRSTROW = 2, FIELDTERMINATOR = ',', TABLOCK);
+BULK INSERT staging.quality_metrics FROM 'C:\your_path\data\sample_quality_metrics.csv'
+WITH (FORMAT = 'CSV', FIRSTROW = 2, FIELDTERMINATOR = ',', TABLOCK);
 ```
 
 ### Step 3 — Open Excel Data Model
@@ -189,7 +124,7 @@ psql -U your_user -d your_db -f sql/06_views_and_aggregates.sql
 ### Step 4 — Connect Power BI Dashboard
 1. Open `powerbi/Healthcare_Dashboard.pbix` in Power BI Desktop
 2. Go to **Transform Data** → **Data Source Settings**
-3. Update the server/database connection to your PostgreSQL instance
+3. Update the server/database connection to your SQL Server instance
 4. Click **Refresh** — all visuals will populate automatically
 
 ---
