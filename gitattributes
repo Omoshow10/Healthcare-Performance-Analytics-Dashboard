@@ -1,0 +1,20 @@
+# ============================================================
+# .gitattributes
+# GitHub Linguist overrides — controls language detection
+# for the repository language bar and primary language badge
+# ============================================================
+
+# Exclude HTML dashboard mockup files from language stats
+# These are output/presentation files, not source code
+index.html                          linguist-detectable=false
+powerbi/healthcare_dashboard_mockup.html linguist-detectable=false
+
+# Mark SQL as the primary detectable language
+sql/*.sql                           linguist-detectable=true
+sql/*.sql                           linguist-language=SQL
+
+# Mark supporting docs as documentation (excluded from stats)
+docs/*.md                           linguist-documentation=true
+powerbi/*.md                        linguist-documentation=true
+excel/*.md                          linguist-documentation=true
+README.md                           linguist-documentation=true
