@@ -6,7 +6,7 @@ All data used in this project is publicly available from the **Centers for Medic
 
 ---
 
-## Dataset 1 — CMS Hospital General Information
+## Dataset 1 - CMS Hospital General Information
 
 | Field | Detail |
 |---|---|
@@ -19,11 +19,11 @@ All data used in this project is publicly available from the **Centers for Medic
 | **Target Table** | `staging.cms_hospital` → `core.dim_hospital` |
 
 ### Key Fields Used
-- `Facility ID` — unique CMS provider number (maps to all other datasets)
+- `Facility ID` - unique CMS provider number (maps to all other datasets)
 - `Facility Name`, `City`, `State`, `ZIP Code`
-- `Hospital Type` — Acute Care, Critical Access, Children's, etc.
-- `Hospital Ownership` — Government, Non-profit, Proprietary
-- `Hospital overall rating` — 1–5 star overall CMS rating
+- `Hospital Type` - Acute Care, Critical Access, Children's, etc.
+- `Hospital Ownership` - Government, Non-profit, Proprietary
+- `Hospital overall rating` - 1–5 star overall CMS rating
 - Group comparison fields: `Mortality national comparison`, `Safety of care national comparison`, etc.
 
 ### Download Steps
@@ -55,11 +55,11 @@ All data used in this project is publicly available from the **Centers for Medic
 - CABG (Coronary Artery Bypass Graft Surgery)
 
 ### Key Fields Used
-- `Number of Discharges` — denominator for readmission rate calculation
-- `Number of Readmissions` — 30-day all-cause readmissions
-- `Excess Readmission Ratio` — actual vs expected (> 1.0 = worse than expected)
-- `Predicted Readmission Rate` — risk-adjusted predicted rate
-- `Expected Readmission Rate` — national baseline for comparison
+- `Number of Discharges` - denominator for readmission rate calculation
+- `Number of Readmissions` - 30-day all-cause readmissions
+- `Excess Readmission Ratio` - actual vs expected (> 1.0 = worse than expected)
+- `Predicted Readmission Rate` - risk-adjusted predicted rate
+- `Expected Readmission Rate` - national baseline for comparison
 
 ### Download Steps
 1. Go to https://data.cms.gov/provider-data/dataset/9n3s-kdb3
@@ -69,7 +69,7 @@ All data used in this project is publicly available from the **Centers for Medic
 
 ---
 
-## Dataset 3 — HCAHPS Patient Survey (Patient Satisfaction)
+## Dataset 3 - HCAHPS Patient Survey (Patient Satisfaction)
 
 | Field | Detail |
 |---|---|
@@ -119,15 +119,15 @@ All data used in this project is publicly available from the **Centers for Medic
 | **Target Table** | `staging.quality_metrics` → `core.fact_quality_metrics` |
 
 ### Measure Categories
-- **Mortality** — 30-day risk-standardized mortality rates (Heart Failure, Acute MI, Pneumonia, COPD, CABG, Stroke)
-- **Safety / HAI** — Standardized Infection Ratios for CLABSI, CAUTI, SSI, MRSA, C. diff
-- **Complications** — Serious complications, PSI-90 composite
+- **Mortality** - 30-day risk-standardized mortality rates (Heart Failure, Acute MI, Pneumonia, COPD, CABG, Stroke)
+- **Safety / HAI** - Standardized Infection Ratios for CLABSI, CAUTI, SSI, MRSA, C. diff
+- **Complications** - Serious complications, PSI-90 composite
 
 ### Key Fields Used
-- `Measure ID` — standardized measure code (e.g., MORT-30-HF, HAI-1)
-- `Score` — rate or ratio value
+- `Measure ID` - standardized measure code (e.g., MORT-30-HF, HAI-1)
+- `Score` - rate or ratio value
 - `Lower Estimate` / `Higher Estimate` — 95% confidence interval
-- `Compared to National` — "Better", "No Different", or "Worse than the National average"
+- `Compared to National` - "Better", "No Different", or "Worse than the National average"
 
 ### Download Steps
 1. Go to https://data.cms.gov/provider-data/dataset/ynj2-r877
