@@ -1,5 +1,3 @@
-## [Live Dashboard Demo](https://omoshow10.github.io/Healthcare-Performance-Analytics-Dashboard/)
-
 # 🏥 Healthcare Performance Analytics Dashboard
 
 
@@ -94,7 +92,7 @@ healthcare-analytics/
 - Microsoft Excel 2019 or Microsoft 365
 - Power BI Desktop (free download from Microsoft)
 
-### Step 1 — Set Up the Database
+### Step 1 - Set Up the Database
 ```sql
 -- Run scripts in order
 sqlcmd -S your_server -d your_db -i sql_schema_setup.sql
@@ -105,7 +103,7 @@ sqlcmd -S your_server -d your_db -i sql_outcome_analytics.sql
 sqlcmd -S your_server -d your_db -i sql_views_and_aggregates.sql
 ```
 
-### Step 2 — Load Sample Data
+### Step 2 - Load Sample Data
 ```sql
 -- Load CSV data into staging tables
 BULK INSERT staging.cms_hospital FROM 'C:\your_path\data\sample_cms_hospital.csv'
@@ -116,12 +114,12 @@ BULK INSERT staging.quality_metrics FROM 'C:\your_path\data\sample_quality_metri
 WITH (FORMAT = 'CSV', FIRSTROW = 2, FIELDTERMINATOR = ',', TABLOCK);
 ```
 
-### Step 3 — Open Excel Data Model
+### Step 3 - Open Excel Data Model
 1. Open `excel/Healthcare_Data_Model.xlsx`
 2. Navigate to the **Data** tab → **Refresh All** to pull from your database
 3. Review pivot tables on each sheet for pre-built summaries
 
-### Step 4 — Connect Power BI Dashboard
+### Step 4 - Connect Power BI Dashboard
 1. Open `powerbi/Healthcare_Dashboard.pbix` in Power BI Desktop
 2. Go to **Transform Data** → **Data Source Settings**
 3. Update the server/database connection to your SQL Server instance
