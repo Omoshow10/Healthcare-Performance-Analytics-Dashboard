@@ -8,10 +8,10 @@ The `Healthcare_Dashboard.pbix` file contains three report pages that map direct
 
 ## Connection Setup
 
-### Step 1 — Open the File
+### Step 1 - Open the File
 Open `powerbi/Healthcare_Dashboard.pbix` in **Power BI Desktop** (free download: https://powerbi.microsoft.com/desktop).
 
-### Step 2 — Update Data Source Connection
+### Step 2 - Update Data Source Connection
 1. Click **Home** → **Transform Data** → **Data Source Settings**
 2. Select the PostgreSQL connection → click **Change Source**
 3. Enter your server details:
@@ -21,14 +21,14 @@ Open `powerbi/Healthcare_Dashboard.pbix` in **Power BI Desktop** (free download:
 4. Click **OK** → **Close**
 5. Enter your PostgreSQL credentials when prompted
 
-### Step 3 — Refresh Data
-Click **Home** → **Refresh** — all visuals will populate from the analytics views.
+### Step 3 - Refresh Data
+Click **Home** → **Refresh** - all visuals will populate from the analytics views.
 
 ---
 
 ## Dashboard Pages
 
-### Page 1 — Hospital Performance
+### Page 1 - Hospital Performance
 
 **Data Source:** `analytics.vw_hospital_scorecard`
 
@@ -46,7 +46,7 @@ Click **Home** → **Refresh** — all visuals will populate from the analytics 
 
 ---
 
-### Page 2 — Operational Efficiency
+### Page 2 - Operational Efficiency
 
 **Data Sources:** `analytics.vw_readmission_trends`, `analytics.vw_hospital_scorecard`
 
@@ -64,19 +64,19 @@ Click **Home** → **Refresh** — all visuals will populate from the analytics 
 
 ---
 
-### Page 3 — Outcome Analytics
+### Page 3 - Outcome Analytics
 
 **Data Sources:** `analytics.vw_quality_summary`, `analytics.vw_state_benchmark`, `analytics.vw_satisfaction_detail`
 
-| Visual | Type | Description |
-|---|---|---|
-| Mortality Rate Trend | Multi-line Chart | 30-day mortality rates by condition, annual trend |
-| HAI Rates Dashboard | Clustered Bar | SIR scores for CLABSI, CAUTI, SSI, MRSA, C.diff |
-| Quality vs National | 100% Stacked Bar | Better / Same / Worse than national split by measure |
-| State Performance Map | Filled Map | Composite quality score by state |
-| Hospital Type Comparison | Grouped Bar | Performance dimensions by hospital type (Teaching vs Community vs Critical Access) |
-| Peer Benchmarking Table | Table | Sortable multi-metric comparison across all hospitals |
-| Quality Scatter | Scatter | Mortality rate vs HAI SIR (quadrant analysis) |
+| Visual                   | Type             | Description                                                                        |
+| ------------------------ | ---------------- | ---------------------------------------------------------------------------------- |
+| Mortality Rate Trend     | Multi-line Chart | 30-day mortality rates by condition, annual trend                                  |
+| HAI Rates Dashboard      | Clustered Bar    | SIR scores for CLABSI, CAUTI, SSI, MRSA, C.diff                                    |
+| Quality vs National      | 100% Stacked Bar | Better / Same / Worse than national split by measure                               |
+| State Performance Map    | Filled Map       | Composite quality score by state                                                   |
+| Hospital Type Comparison | Grouped Bar      | Performance dimensions by hospital type (Teaching vs Community vs Critical Access) |
+| Peer Benchmarking Table  | Table            | Sortable multi-metric comparison across all hospitals                              |
+| Quality Scatter          | Scatter          | Mortality rate vs HAI SIR (quadrant analysis)                                      |
 
 **Key Slicers:** Year, State, Hospital Type, Measure Category, Compared to National
 
@@ -86,7 +86,7 @@ Click **Home** → **Refresh** — all visuals will populate from the analytics 
 
 The **Hospital Detail** drillthrough page (hidden from nav) can be accessed by:
 1. Right-clicking any hospital in any table or chart
-2. Selecting **Drillthrough** → **Hospital Detail**
+2. Selecting **Drillthrough** - **Hospital Detail**
 
 The detail page shows all metrics for a single hospital with historical trend lines.
 
@@ -135,7 +135,7 @@ SUMX(
 
 ## Publishing to Power BI Service
 
-1. Click **File** → **Publish** → **Publish to Power BI**
+1. Click **File** - **Publish** - **Publish to Power BI**
 2. Select your workspace
 3. In the Power BI Service, configure a **scheduled refresh** (requires an on-premises data gateway for PostgreSQL)
 4. Set refresh frequency to **Weekly** (aligned with CMS data update cadence)
@@ -144,9 +144,9 @@ SUMX(
 
 ## Troubleshooting
 
-| Issue | Solution |
-|---|---|
-| Blank visuals after refresh | Check PostgreSQL connection credentials; verify views exist in `analytics` schema |
-| Map visual shows "Can't display map" | Enable map visuals: File → Options → Security → Map and filled map visuals |
-| Slow refresh | Add database indexes (script 01 includes indexes); consider materializing views |
-| Missing data for a state | CMS data suppression — state may have too few hospitals reporting a measure |
+| Issue                                | Solution                                                                          |
+| ------------------------------------ | --------------------------------------------------------------------------------- |
+| Blank visuals after refresh          | Check PostgreSQL connection credentials; verify views exist in `analytics` schema |
+| Map visual shows "Can't display map" | Enable map visuals: File - Options - Security - Map and filled map visuals        |
+| Slow refresh                         | Add database indexes (script 01 includes indexes); consider materializing views   |
+| Missing data for a state             | CMS data suppression - state may have too few hospitals reporting a measure       |
