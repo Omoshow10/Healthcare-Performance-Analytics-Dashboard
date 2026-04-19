@@ -1,4 +1,4 @@
-# Power BI Dashboard — Setup Notes
+# Power BI Dashboard - Setup Notes
 
 ## File: Healthcare_Dashboard.pbix
 
@@ -7,10 +7,10 @@ stored as readable text in a repository, this folder contains this setup guide i
 
 ## How to Build the Dashboard from Scratch
 
-After running all SQL scripts and connecting to your PostgreSQL database, 
+After running all SQL scripts and connecting to your SQL database, 
 build the dashboard by importing these five views as separate tables:
 
-### Data Model Imports (Power BI → Get Data → PostgreSQL)
+### Data Model Imports (Power BI - Get Data - SQL)
 
 Connect to schema: `analytics`
 
@@ -32,7 +32,7 @@ HospitalScorecard[facility_id]  →  SatisfactionDetail[facility_id] (1:*)
 HospitalScorecard[state]        →  StateBenchmark[state]           (1:1)
 ```
 
-### Page 1 — Hospital Performance Metrics
+### Page 1 - Hospital Performance Metrics
 
 1. **Readmission Rate Bar Chart**
    - Axis: `facility_name`
@@ -57,7 +57,7 @@ HospitalScorecard[state]        →  StateBenchmark[state]           (1:1)
    - Legend: `performance_tier`
    - Values: Count of `facility_id`
 
-### Page 2 — Operational Efficiency
+### Page 2 - Operational Efficiency
 
 1. **Annual Volume Line Chart**
    - Axis: `year`
@@ -75,7 +75,7 @@ HospitalScorecard[state]        →  StateBenchmark[state]           (1:1)
    - Values: `avg_readmission_pct`
    - Conditional formatting: Background color scale
 
-### Page 3 — Outcome Analytics
+### Page 3 - Outcome Analytics
 
 1. **Mortality Trend Multi-line**
    - Axis: `year`
@@ -97,9 +97,9 @@ HospitalScorecard[state]        →  StateBenchmark[state]           (1:1)
 
 ### Slicers (add to all pages)
 
-- **Year** — single select, from `ReadmissionTrends[year]`
-- **State** — multi-select, from `HospitalScorecard[state]`
-- **Hospital Type** — multi-select, from `HospitalScorecard[hospital_type]`
+- **Year** - single select, from `ReadmissionTrends[year]`
+- **State** - multi-select, from `HospitalScorecard[state]`
+- **Hospital Type** - multi-select, from `HospitalScorecard[hospital_type]`
 
 ### Theme
 
@@ -114,4 +114,4 @@ Recommended theme colors (healthcare professional palette):
 }
 ```
 
-Save as `Healthcare_Theme.json` and apply via: View → Themes → Browse for themes
+Save as `Healthcare_Theme.json` and apply via: View - Themes - Browse for themes
