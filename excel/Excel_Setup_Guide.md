@@ -6,29 +6,29 @@ This workbook serves as both a data staging tool and an exploratory analysis lay
 
 **Sheets included:**
 
-| Sheet Name | Purpose |
-|---|---|
-| `README` | Setup instructions and sheet guide |
-| `Hospital_Data` | Cleaned CMS hospital general information |
-| `Readmissions` | HRRP readmission data by hospital and condition |
-| `HCAHPS_Satisfaction` | Patient satisfaction survey scores |
-| `Quality_Metrics` | Mortality, HAI, and safety measure scores |
-| `State_Summary` | Pivot table — state-level performance averages |
-| `Condition_Summary` | Pivot table — readmission rates by condition |
-| `Performance_Scorecard` | Hospital scorecard with conditional formatting |
-| `Charts` | Pre-built charts for quick review |
+| Sheet Name              | Purpose                                         |
+| ----------------------- | ----------------------------------------------- |
+| `README`                | Setup instructions and sheet guide              |
+| `Hospital_Data`         | Cleaned CMS hospital general information        |
+| `Readmissions`          | HRRP readmission data by hospital and condition |
+| `HCAHPS_Satisfaction`   | Patient satisfaction survey scores              |
+| `Quality_Metrics`       | Mortality, HAI, and safety measure scores       |
+| `State_Summary`         | Pivot table - state-level performance averages  |
+| `Condition_Summary`     | Pivot table - readmission rates by condition    |
+| `Performance_Scorecard` | Hospital scorecard with conditional formatting  |
+| `Charts`                | Pre-built charts for quick review               |
 
 **How to use:**
 1. Download the four CMS CSV files (see docs/Data_Sources.md)
 2. Paste data into the corresponding raw sheets (grey-shaded area)
 3. The cleaned sheets auto-update via Excel formulas and Power Query
-4. Refresh pivot tables: Data → Refresh All
+4. Refresh pivot tables: Data - Refresh All
 5. Review Charts sheet for summary visuals
 
-**Power Query connections** (Data → Queries & Connections):
-- `CMS_Hospital_Raw` → loads sample_cms_hospital.csv
-- `Readmissions_Raw` → loads sample_readmissions.csv
-- `Quality_Raw` → loads sample_quality_metrics.csv
+**Power Query connections** (Data - Queries & Connections):
+- `CMS_Hospital_Raw` - loads sample_cms_hospital.csv
+- `Readmissions_Raw` - loads sample_readmissions.csv
+- `Quality_Raw` - loads sample_quality_metrics.csv
 
 ---
 
