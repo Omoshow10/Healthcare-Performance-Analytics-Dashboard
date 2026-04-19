@@ -34,10 +34,10 @@ sqlcmd -S your_server\instance -d your_database -i sql\06_views_and_aggregates.s
 ## Schema Architecture
 
 ```
-staging.*     ←── Raw CMS CSV data (no transformations)
+staging.*     ←─ Raw CMS CSV data (no transformations)
     │
     ▼
-core.*        ←── Cleaned dimensional model
+core.*        ←─ Cleaned dimensional model
   dim_hospital       (one row per hospital)
   dim_date           (one row per calendar day 2019–2026)
   dim_measure        (one row per CMS quality/performance measure)
@@ -46,7 +46,7 @@ core.*        ←── Cleaned dimensional model
   fact_quality_metrics
     │
     ▼
-analytics.*   ←── Views Power BI connects to directly
+analytics.*   ←─ Views Power BI connects to directly
   vw_hospital_scorecard
   vw_readmission_trends
   vw_quality_summary
